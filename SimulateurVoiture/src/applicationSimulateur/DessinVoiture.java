@@ -29,7 +29,7 @@ public class DessinVoiture extends JFrame {
 		graphics.fillRect(xPixelVoiture, 200, 40, 20);
 
 	}
-
+	
 	public void setXPixelVoiture(int xPixelVoiture) {
 		this.xPixelVoiture = xPixelVoiture;
 	}
