@@ -6,6 +6,8 @@ public class Voiture extends Observable {
 
 	private int coordXEnMetres;
 	private int vitesseMetreParSecondes;
+	private int angleDirectionVoiture;
+	private int coordYEnMetres;
 
 	public static final int largeurDomaine = 1000;
 
@@ -16,6 +18,13 @@ public class Voiture extends Observable {
 
 	public Voiture(int coordXEnMetres, int vitesseMetreParSecondes) {
 		this.coordXEnMetres = coordXEnMetres;
+		this.vitesseMetreParSecondes = vitesseMetreParSecondes;
+	}
+	
+	public Voiture(int coordXEnMetres, int angleDirectionVoiture, int vitesseMetreParSecondes) {
+		this.coordXEnMetres = coordXEnMetres;
+		coordYEnMetres=coordXEnMetres;
+		this.angleDirectionVoiture = angleDirectionVoiture;
 		this.vitesseMetreParSecondes = vitesseMetreParSecondes;
 	}
 
@@ -35,5 +44,12 @@ public class Voiture extends Observable {
 	private void notificationObservateurs() {
 		this.setChanged();
 		this.notifyObservers();
+	}
+
+	public void avanceEnFonctionDeLaVitesseAngle() {
+		coordXEnMetres += vitesseMetreParSecondes;
+		coordXEnMetres += Math.cos(angleDirectionVoiture)/coordXEnMetres;
+		notificationObservateurs();
+		
 	}
 }

@@ -28,11 +28,18 @@ public class TestVoiture {
 		assertEquals(150,voiture.getVitesseMetreParSecondes());
 	}
 	
+	
 	@Test
 	public void testMiseAjourPositionEnFonctionVitesse() {
 		Voiture voiture = new Voiture(20,100);
 		voiture.avancerEnFonctionDeLaVitesse();
 		assertEquals(120, voiture.getCoordXEnMetres());
+	}
+	
+	@Test
+	public void testMiseAjourPositionEnFonctionVitesseAngle(){
+		Voiture voiture = new Voiture(20,90, 100);
+		voiture.avanceEnFonctionDeLaVitesseAngle();
 	}
 
 	
