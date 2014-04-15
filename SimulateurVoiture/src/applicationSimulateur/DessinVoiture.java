@@ -1,10 +1,12 @@
 package applicationSimulateur;
 
 import java.awt.Graphics;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import javax.swing.JFrame;
 
-public class DessinVoiture extends JFrame {
+public class DessinVoiture extends JFrame implements KeyListener{
 
 	public static final int TailleFenetreEnPixels = 500;
 	
@@ -32,6 +34,23 @@ public class DessinVoiture extends JFrame {
 	
 	public void setXPixelVoiture(int xPixelVoiture) {
 		this.xPixelVoiture = xPixelVoiture;
+	}
+
+	@Override
+	public void keyPressed(KeyEvent arg0) {
+		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public void keyReleased(KeyEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyTyped(KeyEvent arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
