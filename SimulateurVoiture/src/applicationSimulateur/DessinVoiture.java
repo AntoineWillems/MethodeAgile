@@ -1,6 +1,8 @@
 package applicationSimulateur;
 
+import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Polygon;
 
 import javax.swing.JFrame;
 
@@ -26,12 +28,23 @@ public class DessinVoiture extends JFrame {
 	}
 
 	public void dessinerVoiture(int xPixelVoiture, Graphics graphics) {
-		graphics.fillRect(xPixelVoiture, 200, 40, 20);
-
+		//graphics.fillRect(xPixelVoiture, 200, 40, 20);
+		
+		int nombreCoteTriangle = 3;
+	
+		int[] listePointsx={xPixelVoiture-10, xPixelVoiture-10, xPixelVoiture+10};
+		int[] listePointsy={50, 60, 55};
+		Polygon dessinTriangleVoiture = new Polygon(listePointsx,listePointsy, nombreCoteTriangle);
+		
+		graphics.setColor(Color.BLACK);
+		graphics.fillPolygon(dessinTriangleVoiture);
+		
 	}
 
 	public void setXPixelVoiture(int xPixelVoiture) {
 		this.xPixelVoiture = xPixelVoiture;
 	}
+	
+	
 
 }
