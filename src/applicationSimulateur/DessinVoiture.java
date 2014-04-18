@@ -14,7 +14,6 @@ public class DessinVoiture extends JPanel {
         
     }
 
-    @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         
@@ -26,7 +25,7 @@ public class DessinVoiture extends JPanel {
         System.out.println("LOL");
         int nombreCoteTriangle = 3;
 
-        int[] listePointsx= {xPixelVoiture-10, xPixelVoiture-10, xPixelVoiture+10};
+        int[] listePointsx= {xPixelVoiture, xPixelVoiture, xPixelVoiture+10};
         int[] listePointsy= {200, 220, 210};
 
         Polygon dessinTriangleVoiture = new Polygon(listePointsx,listePointsy, nombreCoteTriangle);

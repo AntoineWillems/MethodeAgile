@@ -41,17 +41,14 @@ public class VoitureView extends JFrame implements Observer {
         //Key listening
         this.addKeyListener(new KeyListener() {
 
-            @Override
             public void keyTyped(KeyEvent e) {
                 // TODO Auto-generated method stub
             }
 
-            @Override
             public void keyReleased(KeyEvent e) {
                 // TODO Auto-generated method stub
             }
 
-            @Override
             public void keyPressed(KeyEvent e) {
                 switch(e.getKeyCode())
                 {
@@ -91,7 +88,6 @@ public class VoitureView extends JFrame implements Observer {
         return coordonneeXEnPixels;
     }
 
-    @Override
     public void update(Observable sujetObservation, Object arg1) {
         Voiture v = (Voiture) sujetObservation;
         

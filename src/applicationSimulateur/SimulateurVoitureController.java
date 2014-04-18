@@ -13,13 +13,13 @@ public class SimulateurVoitureController {
         this.model = dataModel;
         
         Timer updateView = new Timer(dureeUneSecondeEnMilliSecondes, new ActionListener() {
-            @Override
+        
             public void actionPerformed(ActionEvent e) {
                 model.avancerEnFonctionDeLaVitesse();
             }
         });
         
-        //updateView.start();
+        updateView.start();
     }
     
     public static void main(String args[]){
