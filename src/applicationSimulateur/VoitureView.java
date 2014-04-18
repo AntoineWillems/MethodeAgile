@@ -11,7 +11,6 @@ import javax.swing.JFrame;
 public class VoitureView extends JFrame implements Observer {
 
     //Subviews
-    private JFrame container;
     private DessinVoiture VoitureRepresentation;
     public static final int TailleFenetreEnPixels = 500;
     
@@ -27,14 +26,17 @@ public class VoitureView extends JFrame implements Observer {
         
         initComponents();
         
-        this.controller = controller;                
-        //this.setContentPane(container);
+        this.controller = controller;
         this.setVisible(true);
+    }
+
+    //DEFAULT CONSTRUCTOR
+    public VoitureView() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     // <editor-fold defaultstate="collapsed" desc="Initialisation des subviews">                          
     private void initComponents() {
-        this.container = new JFrame();
         this.VoitureRepresentation = new DessinVoiture();
         this.add(this.VoitureRepresentation);
         
@@ -72,17 +74,6 @@ public class VoitureView extends JFrame implements Observer {
         });
         
     }// </editor-fold> 
-    
-    /*public VoitureView(Voiture voiture) {
-        this.voiture = voiture;
-        this.voiture.addObserver(this);
-    }*/
-
-    /*public VoitureView(Voiture voiture, DessinVoiture ihm) {
-        this.voiture = voiture;
-        this.voiture.addObserver(this);
-        this.ihm = ihm;
-    }*/
 
     public int transformerMetrePixel(int coordonneeXEnMetre) {
 
@@ -96,12 +87,9 @@ public class VoitureView extends JFrame implements Observer {
         Voiture v = (Voiture) sujetObservation;
         
         int xVoiture = v.getCoordXEnMetres();
-        //int yVoiture = v.getCoordYEnMetres();
         int xPixelVoiture = this.transformerMetrePixel(xVoiture);
-        //int yPixelVoiture = this.transformerMetrePixel(yVoiture);
         
         this.VoitureRepresentation.setXPixelVoiture(xPixelVoiture);
-        //ihm.setYPixelVoiture(yPixelVoiture);
         this.VoitureRepresentation.repaint();
     }
 }

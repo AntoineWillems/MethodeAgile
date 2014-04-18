@@ -23,7 +23,6 @@ public class DessinVoiture extends JPanel {
     }
 
     public void dessinerVoiture(int xPixelVoiture, Graphics graphics) {
-        System.out.println("LOL");
         int nombreCoteTriangle = 3;
 
         int[] listePointsx= {xPixelVoiture-10, xPixelVoiture-10, xPixelVoiture+10};
