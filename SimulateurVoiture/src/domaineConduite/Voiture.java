@@ -31,6 +31,10 @@ public class Voiture extends Observable {
 	public int getCoordXEnMetres() {
 		return coordXEnMetres;
 	}
+	
+	public int getCoordYEnMetres(){
+		return coordYEnMetres;
+	}
 
 	public int getVitesseMetreParSecondes() {
 		return vitesseMetreParSecondes;
@@ -48,7 +52,7 @@ public class Voiture extends Observable {
 
 	public void avanceEnFonctionDeLaVitesseAngle() {
 		coordXEnMetres += vitesseMetreParSecondes;
-		coordXEnMetres += Math.cos(angleDirectionVoiture)/coordXEnMetres;
+		coordYEnMetres = (int) (coordXEnMetres/Math.cos(angleDirectionVoiture));
 		notificationObservateurs();
 		
 	}

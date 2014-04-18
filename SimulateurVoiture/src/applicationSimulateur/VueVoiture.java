@@ -42,8 +42,11 @@ public class VueVoiture implements Observer {
 	public void update(Observable arg0, Object arg1) {
 
 		int xVoiture = this.voiture.getCoordXEnMetres();
+		int yVoiture = this.voiture.getCoordYEnMetres();
 		int xPixelVoiture = this.transformerMetrePixel(xVoiture);
+		int yPixelVoiture = this.transformerMetrePixel(yVoiture);
 		ihm.setXPixelVoiture(xPixelVoiture);
+		ihm.setYPixelVoiture(yPixelVoiture);
 		ihm.repaint();
 
 	}

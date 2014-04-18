@@ -38,9 +38,9 @@ public class TestVoiture {
 	
 	@Test
 	public void testMiseAjourPositionEnFonctionVitesseAngle(){
-		Voiture voiture = new Voiture(20,90, 100);
+		Voiture voiture = new Voiture(20,45, 100);
 		voiture.avanceEnFonctionDeLaVitesseAngle();
+		assertEquals((int) (120/Math.cos(45)),voiture.getCoordYEnMetres());
 	}
-
 	
 }
