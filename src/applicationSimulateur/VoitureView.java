@@ -92,12 +92,12 @@ public class VoitureView extends JFrame implements Observer {
         Voiture v = (Voiture) sujetObservation;
         
         int xVoiture = v.getCoordXEnMetres();
-        //int yVoiture = v.getCoordYEnMetres();
+        int yVoiture = v.getCoordYEnMetres();
         int xPixelVoiture = this.transformerMetrePixel(xVoiture);
-        //int yPixelVoiture = this.transformerMetrePixel(yVoiture);
+        int yPixelVoiture = this.transformerMetrePixel(yVoiture);
         
         this.VoitureRepresentation.setXPixelVoiture(xPixelVoiture);
-        //ihm.setYPixelVoiture(yPixelVoiture);
+        this.VoitureRepresentation.setYPixelVoiture(yPixelVoiture);
         this.VoitureRepresentation.repaint();
     }
 }

@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 public class DessinVoiture extends JPanel {
 
     private int xPixelVoiture;
+    private int yPixelVoiture;
 
     public DessinVoiture() {
         
@@ -18,15 +19,15 @@ public class DessinVoiture extends JPanel {
         super.paintComponent(g);
         
         g.setColor(Color.BLACK);
-        dessinerVoiture(this.xPixelVoiture, g);
+        dessinerVoiture(this.xPixelVoiture, this.yPixelVoiture, g);
     }
 
-    public void dessinerVoiture(int xPixelVoiture, Graphics graphics) {
+    public void dessinerVoiture(int xPixelVoiture, int yPixelVoiture, Graphics graphics) {
         System.out.println("LOL");
         int nombreCoteTriangle = 3;
 
-        int[] listePointsx= {xPixelVoiture, xPixelVoiture, xPixelVoiture+10};
-        int[] listePointsy= {200, 220, 210};
+        int[] listePointsx= {xPixelVoiture, xPixelVoiture, xPixelVoiture+20};
+        int[] listePointsy= {yPixelVoiture, yPixelVoiture-20, yPixelVoiture+10};
 
         Polygon dessinTriangleVoiture = new Polygon(listePointsx,listePointsy, nombreCoteTriangle);
 
@@ -37,4 +38,9 @@ public class DessinVoiture extends JPanel {
     public void setXPixelVoiture(int xPixelVoiture) {
         this.xPixelVoiture = xPixelVoiture;
     }
+
+	public void setYPixelVoiture(int yPixelVoiture) {
+		this.yPixelVoiture = yPixelVoiture;
+		
+	}
 }
