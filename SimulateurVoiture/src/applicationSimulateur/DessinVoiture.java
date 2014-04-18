@@ -21,7 +21,7 @@ public class DessinVoiture extends JFrame {
 		this.setSize(TailleFenetreEnPixels, TailleFenetreEnPixels);
 		this.setVisible(true);
 		this.xPixelVoiture = 0;
-		this.yPixelVoiture = 150;
+		this.yPixelVoiture = 0;
 		
 		this.addKeyListener(new KeyListener() {
 			
