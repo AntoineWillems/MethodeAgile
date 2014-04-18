@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import applicationSimulateur.VueVoiture;
+import applicationSimulateur.VoitureView;
 
 
 
@@ -18,7 +18,7 @@ public class TestVueVoiture {
 	@Test
 	public void testTransformationMetrePixels(){
 		
-		VueVoiture triangle = new VueVoiture();
+		VoitureView triangle = new VoitureView();
 		
 		assertEquals(400, triangle.transformerMetrePixel(800));	
 		assertEquals(100, triangle.transformerMetrePixel(201));	

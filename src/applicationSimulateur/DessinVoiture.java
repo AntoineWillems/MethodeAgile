@@ -1,37 +1,41 @@
 package applicationSimulateur;
 
+import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.Polygon;
+import javax.swing.JPanel;
 
-import javax.swing.JFrame;
+public class DessinVoiture extends JPanel {
 
-public class DessinVoiture extends JFrame {
+    private int xPixelVoiture;
 
-	public static final int TailleFenetreEnPixels = 500;
-	
-	private int xPixelVoiture;
+    public DessinVoiture() {
+        
+    }
 
-	public DessinVoiture() {
-		super();
-		this.setTitle("Simulateur de Voiture");
-		this.setSize(TailleFenetreEnPixels, TailleFenetreEnPixels);
-		this.setVisible(true);
-		this.xPixelVoiture = 0;
-	}
+    @Override
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        
+        g.setColor(Color.BLACK);
+        dessinerVoiture(this.xPixelVoiture, g);
+    }
 
-	@Override
-	public void paint(Graphics graphics) {
-		super.paint(graphics);
-		dessinerVoiture(this.xPixelVoiture, graphics);
+    public void dessinerVoiture(int xPixelVoiture, Graphics graphics) {
+        System.out.println("LOL");
+        int nombreCoteTriangle = 3;
 
-	}
+        int[] listePointsx= {xPixelVoiture-10, xPixelVoiture-10, xPixelVoiture+10};
+        int[] listePointsy= {200, 220, 210};
 
-	public void dessinerVoiture(int xPixelVoiture, Graphics graphics) {
-		graphics.fillRect(xPixelVoiture, 200, 40, 20);
+        Polygon dessinTriangleVoiture = new Polygon(listePointsx,listePointsy, nombreCoteTriangle);
 
-	}
+        graphics.setColor(Color.BLACK);
+        graphics.fillPolygon(dessinTriangleVoiture);
+    }
 
-	public void setXPixelVoiture(int xPixelVoiture) {
-		this.xPixelVoiture = xPixelVoiture;
-	}
-
+    public void setXPixelVoiture(int xPixelVoiture) {
+        this.xPixelVoiture = xPixelVoiture;
+    }
 }
