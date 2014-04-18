@@ -1,6 +1,8 @@
 package applicationSimulateur;
 
 import domaineConduite.Voiture;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -36,8 +38,38 @@ public class VoitureView extends JFrame implements Observer {
         this.VoitureRepresentation = new DessinVoiture();
         this.add(this.VoitureRepresentation);
         
-        
         //Key listening
+        this.addKeyListener(new KeyListener() {
+
+            @Override
+            public void keyTyped(KeyEvent e) {
+                // TODO Auto-generated method stub
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+                // TODO Auto-generated method stub
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                switch(e.getKeyCode())
+                {
+                    case KeyEvent.VK_RIGHT:
+                            System.out.print("right");
+                            break;
+                    case KeyEvent.VK_LEFT:
+                            System.out.print("left");
+                            break;
+                    case KeyEvent.VK_DOWN:
+                            System.out.print("down");
+                            break;
+                    case KeyEvent.VK_UP:
+                            System.out.print("up");
+                            break;
+                }
+            }
+        });
         
     }// </editor-fold> 
     
