@@ -59,9 +59,11 @@ public class VoitureView extends JFrame implements Observer {
                 {
                     case KeyEvent.VK_RIGHT:
                             System.out.print("right");
+                            controller.incrementVitesse();
                             break;
                     case KeyEvent.VK_LEFT:
                             System.out.print("left");
+                            controller.decrementVitesse();
                             break;
                     case KeyEvent.VK_DOWN:
                             System.out.print("down");

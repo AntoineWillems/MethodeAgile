@@ -31,7 +31,15 @@ public class Voiture extends Observable {
         coordXEnMetres += vitesseMetreParSecondes;
         notificationObservateurs();
     }
+    
+    public void incrementVitesse(){
+        vitesseMetreParSecondes += 10;
+    }
 
+    public void decrementVitesse(){
+        vitesseMetreParSecondes -= 10;
+    }
+    
     private void notificationObservateurs() {
         this.setChanged();
         this.notifyObservers();

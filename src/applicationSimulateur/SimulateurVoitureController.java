@@ -12,7 +12,7 @@ public class SimulateurVoitureController {
     public SimulateurVoitureController(Voiture dataModel) {
         this.model = dataModel;
         
-        Timer updateView = new Timer(dureeUneSecondeEnMilliSecondes, new ActionListener() {
+        Timer updateView = new Timer(60, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 model.avancerEnFonctionDeLaVitesse();
@@ -22,9 +22,17 @@ public class SimulateurVoitureController {
         updateView.start();
     }
     
+    public void incrementVitesse(){
+        this.model.incrementVitesse();
+    }
+    
+    public void decrementVitesse(){
+        this.model.decrementVitesse();
+    }
+    
     public static void main(String args[]){
         //Création du modèle
-        Voiture model = new Voiture(100, 50);
+        Voiture model = new Voiture(0, 0);
         //Création du controller
         SimulateurVoitureController controller = new SimulateurVoitureController(model);
         //Création de la vue

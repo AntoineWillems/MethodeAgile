@@ -1,7 +1,6 @@
 package applicationSimulateur;
 
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Polygon;
 import javax.swing.JPanel;
@@ -9,6 +8,8 @@ import javax.swing.JPanel;
 public class DessinVoiture extends JPanel {
 
     private int xPixelVoiture;
+    private static int INITIAL_XP1 = 10;
+    private static int INITIAL_XP3 = 30;
 
     public DessinVoiture() {
         
@@ -25,7 +26,7 @@ public class DessinVoiture extends JPanel {
     public void dessinerVoiture(int xPixelVoiture, Graphics graphics) {
         int nombreCoteTriangle = 3;
 
-        int[] listePointsx= {xPixelVoiture-10, xPixelVoiture-10, xPixelVoiture+10};
+        int[] listePointsx= {xPixelVoiture+INITIAL_XP1, xPixelVoiture+INITIAL_XP1, xPixelVoiture+INITIAL_XP3};
         int[] listePointsy= {200, 220, 210};
 
         Polygon dessinTriangleVoiture = new Polygon(listePointsx,listePointsy, nombreCoteTriangle);
