@@ -58,11 +58,9 @@ public class VoitureView extends JFrame implements Observer {
                 switch(e.getKeyCode())
                 {
                     case KeyEvent.VK_RIGHT:
-                            System.out.print("right");
                             controller.incrementVitesse();
                             break;
                     case KeyEvent.VK_LEFT:
-                            System.out.print("left");
                             controller.decrementVitesse();
                             break;
                     case KeyEvent.VK_DOWN:
@@ -91,7 +89,13 @@ public class VoitureView extends JFrame implements Observer {
         int xVoiture = v.getCoordXEnMetres();
         int xPixelVoiture = this.transformerMetrePixel(xVoiture);
         
-        this.VoitureRepresentation.setXPixelVoiture(xPixelVoiture);
-        this.VoitureRepresentation.repaint();
+        if(xPixelVoiture > 0 && xPixelVoiture < TailleFenetreEnPixels){
+            //this.VoitureRepresentation.setXPixelVoiture(xPixelVoiture);
+            this.VoitureRepresentation.updateLocation(xPixelVoiture);
+            //this.VoitureRepresentation.repaint();
+        }
+        else {
+            System.out.println(this.VoitureRepresentation.getXPixelVoiture());
+        }
     }
 }

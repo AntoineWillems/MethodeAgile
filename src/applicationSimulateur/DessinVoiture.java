@@ -2,6 +2,7 @@ package applicationSimulateur;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Point;
 import java.awt.Polygon;
 import javax.swing.JPanel;
 
@@ -37,5 +38,15 @@ public class DessinVoiture extends JPanel {
 
     public void setXPixelVoiture(int xPixelVoiture) {
         this.xPixelVoiture = xPixelVoiture;
+    }
+    
+    public int getXPixelVoiture() {
+        return this.xPixelVoiture;
+    }
+    
+    public void updateLocation(int px) {
+        Point locationX = this.getLocation();
+        locationX.x += px;
+        this.setLocation(locationX);
     }
 }

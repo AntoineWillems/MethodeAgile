@@ -33,11 +33,11 @@ public class Voiture extends Observable {
     }
     
     public void incrementVitesse(){
-        vitesseMetreParSecondes += 10;
+        vitesseMetreParSecondes += 1;
     }
 
     public void decrementVitesse(){
-        vitesseMetreParSecondes -= 10;
+        vitesseMetreParSecondes -= 1;
     }
     
     private void notificationObservateurs() {
